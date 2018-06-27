@@ -37,12 +37,13 @@ POSSIBILITY OF SUCH DAMAGE.
     <relativePath />
   </parent>
 
+  <groupId>org.postgresql.benchmarks</groupId>
   <artifactId>pgjdbc-benchmark</artifactId>
   <packaging>jar</packaging>
   <name>PostgreSQL JDBC Driver - benchmarks</name>
-  <version>9.4.1207-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <description>PostgreSQL JDBC Driver - benchmarks</description>
-  <url>https://github.com/pgjdbc/pgjdbc</url>
+  <url>https://github.com/pgjdbc/benchmarks</url>
 
   <dependencies>
     <dependency>
@@ -59,7 +60,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>${project.version}</version>
+      <version>${pgjdbc.version}</version>
       <!--<scope>provided</scope>-->
     </dependency>
   </dependencies>
@@ -69,6 +70,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <uberjar.name>benchmarks</uberjar.name>
     <current.jdk>1.8</current.jdk>
     <javac.target>${current.jdk}</javac.target>
+    <pgjdbc.version>42.2.2</pgjdbc.version>
   </properties>
 
   <build>
@@ -86,6 +88,8 @@ POSSIBILITY OF SUCH DAMAGE.
             </dependency>
           </dependencies>
           <configuration>
+            <configLocation>src/main/checkstyle/checks.xml</configLocation>
+            <suppressionsLocation>src/main/checkstyle/suppressions.xml</suppressionsLocation>
             <configLocation>../pgjdbc/src/main/checkstyle/checks.xml</configLocation>
             <violationSeverity>error</violationSeverity>
             <failOnViolation>true</failOnViolation>
