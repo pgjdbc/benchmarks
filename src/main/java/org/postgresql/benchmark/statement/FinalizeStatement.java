@@ -47,7 +47,7 @@ import java.util.concurrent.TimeUnit;
  * <blockquote> <code>java -classpath postgresql-driver.jar:target/benchmarks.jar -prof gc -f 1 -wi
  * 10 -i 10</code> </blockquote>
  */
-@Fork(value = 1, jvmArgsPrepend = "-Xmx128m")
+@Fork(value = 5, jvmArgsPrepend = "-Xmx128m")
 @Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
 @Warmup(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
 @State(Scope.Thread)
